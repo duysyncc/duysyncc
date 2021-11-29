@@ -1,7 +1,7 @@
 {
   "name": "helloswap",
   "version": "0.1.0",
-  "homepage": "https://duysyncc.github.io/webapp/",
+  "homepage": "https://duysyncc.github.io/duysyncc/build/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

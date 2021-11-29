@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState, useEffect } from 'react';
+import SwapPage from "./pages/Swap"
+import LiquidityPage from "./pages/Liquidity"
 function App() {
+  const [url, setUrl] = useState("/Swap")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul className="router">
+        <li onClick={() => {
+          setUrl("/Swap")
+        }}>Swap</li>
+        
+        <li onClick={() => {
+          setUrl("/Liquidity")
+        }}>Liquidity</li>
+      </ul>
+      <div className="main">
+        {url == "/Swap" ? <SwapPage /> : null}
+        {url == "/Liquidity" ? <LiquidityPage /> : null}
+      </div>
     </div>
   );
 }

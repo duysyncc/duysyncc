@@ -1,3 +1,8 @@
+<h1>I Am A man<h1>
+
+npm install eslint --save-dev
+npx eslint --init
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

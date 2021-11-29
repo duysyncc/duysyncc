@@ -8,10 +8,12 @@ import { erc20 } from '../../constants/contracts/ecr20';
 
 function TokenSearch(props) {
     const initListAddress = [
-        "0xEcE0Dfdd6fA861B44117A30CCB432dfB332091EB",
         "0xb289b361a633A9D2b0B39BAE76BB458d83f58CEC",
         "0x03351b77e3548b2fa34b89b39e10f327b298c257",
-        "0x2d144001b32AFFdb3189186BE5B2F5D207384E89",
+        "0x00c3476c81c6D301586F1686c3AcB30Da474535D",
+        "0x63d780Ab54c8c962495DC0DbDaC60cc6f9fe8572",
+        "0x246441468045B4417371886c3b4573A24B80b776",
+        "0x9d07dC7E5B125c473B2Bdd100F66F240Eb2f5948",
     ]
     const [listAddress, setListAddress] = useState(initListAddress)
     const [listInfo, setListInfo] = useState([])

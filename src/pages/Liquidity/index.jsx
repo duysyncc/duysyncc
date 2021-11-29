@@ -15,7 +15,7 @@ function LiquidityPage() {
 
   const [tokenA, setTokenA] = useState(() => {
     return {
-      address: "0xb289b361a633a9d2b0b39bae76bb458d83f58cec",
+      address: "0xb289b361a633A9D2b0B39BAE76BB458d83f58CEC",
       inputToken: 0,
       decimals: 0,
       balance: 0,

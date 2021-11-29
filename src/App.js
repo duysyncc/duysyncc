@@ -7,10 +7,11 @@ function App() {
   return (
     <div className="App">
       <ul className="router">
+        <li className="Logo">Hello Swap</li>
         <li onClick={() => {
           setUrl("/Swap")
         }}>Swap</li>
-        
+
         <li onClick={() => {
           setUrl("/Liquidity")
         }}>Liquidity</li>

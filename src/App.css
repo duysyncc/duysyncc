@@ -21,7 +21,6 @@
   width: 100%;
   border: 1px solid tan;
   padding: 10px 0;
-  color: black;
   font-size: 30px;
   margin-top: 5px;
 }
@@ -29,4 +28,10 @@
 .main {
   width: 80vw;
   float: right;
+}
+
+.Logo {
+  font-size: 30px;
+  font-weight: 900;
+  color: burlywood;
 }

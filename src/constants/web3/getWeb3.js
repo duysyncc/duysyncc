@@ -24,7 +24,7 @@ const getWeb3 = async () => {
     else {
         const provider = new Web3.providers.HttpProvider('http://127.0.0.1:9545');
         const web3 = new Web3(provider);
-        console.log('No web3 instance injected, using Local web3.');
+        alert('No web3 instance injected, using Local web3.');
         return web3;
     }
 };

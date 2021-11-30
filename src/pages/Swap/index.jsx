@@ -198,7 +198,7 @@ function SwapPage() {
               accounts, //to
               Web3.utils.toBN(new Date().getTime() + 20 * 60), //deadline
             ).send({ from: accounts })
-            alert("Swap Success Check on https://testnet.bscscan.com/tx/" + data.transactionHash)
+            alert("Swap Success Check on https://mumbai.polygonscan.com/tx/" + data.transactionHash)
           }}>Swap</button>
         </div>
       </div>

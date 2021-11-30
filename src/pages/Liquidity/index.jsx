@@ -204,7 +204,7 @@ function LiquidityPage() {
               accounts,
               Web3.utils.toBN(new Date().getTime() + 20 * 60),
             ).send({ from: accounts })
-            alert("Add Liquidity Success Check on   https://testnet.bscscan.com/tx/" + data.transactionHash)
+            alert("Add Liquidity Success Check on   https://mumbai.polygonscan.com/tx/" + data.transactionHash)
           }}>Add Liquidity</button>
         </div>
       </div>

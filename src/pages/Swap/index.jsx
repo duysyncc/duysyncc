@@ -15,7 +15,7 @@ function SwapPage() {
 
   const [tokenA, setTokenA] = useState(() => {
     return {
-      address: "0xb289b361a633a9d2b0b39bae76bb458d83f58cec",
+      address: "0x30D9dced0FFB0e669F08427BEda558634129Ee2d",
       inputToken: 0,
       decimals: 0,
       balance: 0,
@@ -24,14 +24,14 @@ function SwapPage() {
   })
   const [tokenB, setTokenB] = useState(() => {
     return {
-      address: "0x03351b77e3548b2fa34b89b39e10f327b298c257",
+      address: "0x23DD4011caf6116A210f9AF9a7E09224C80024F7",
       inputToken: 0,
       decimals: 0,
       balance: 0,
       symbol: ""
     }
   })
-  let routerAddress = "0xCc7aDc94F3D80127849D2b41b6439b7CF1eB4Ae0";
+  const routerAddress = "0xa7b58c3dc64acE79cCB4541415f841c5201FAEBf";
   async function getInfoToken(addressToken) {
     let web3 = await getWeb3();
     let accounts = await web3.eth.getAccounts();

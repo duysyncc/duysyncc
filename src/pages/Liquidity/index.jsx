@@ -15,7 +15,7 @@ function LiquidityPage() {
 
   const [tokenA, setTokenA] = useState(() => {
     return {
-      address: "0x30D9dced0FFB0e669F08427BEda558634129Ee2d",
+      address: "0x25FE88F3a2F152d5A710B51171e09c10FcbF1403",
       inputToken: 0,
       decimals: 0,
       balance: 0,
@@ -24,7 +24,7 @@ function LiquidityPage() {
   })
   const [tokenB, setTokenB] = useState(() => {
     return {
-      address: "0x23DD4011caf6116A210f9AF9a7E09224C80024F7",
+      address: "0xae39290ffbda6C5847F647f92cBf37FdA4C2de80",
       inputToken: 0,
       decimals: 0,
       balance: 0,

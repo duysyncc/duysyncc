@@ -15,7 +15,7 @@ function SwapPage() {
 
   const [tokenA, setTokenA] = useState(() => {
     return {
-      address: "0x25FE88F3a2F152d5A710B51171e09c10FcbF1403",
+      address: "0x685aEF5Ce482700dF29Dd69b2931f86575CeFb40",
       inputToken: 0,
       decimals: 0,
       balance: 0,
@@ -24,7 +24,7 @@ function SwapPage() {
   })
   const [tokenB, setTokenB] = useState(() => {
     return {
-      address: "0xae39290ffbda6C5847F647f92cBf37FdA4C2de80",
+      address: "0xA39a336E89A33D24B5C8a0d594B1f2A78b255825",
       inputToken: 0,
       decimals: 0,
       balance: 0,

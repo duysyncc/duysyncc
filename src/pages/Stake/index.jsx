@@ -12,7 +12,7 @@ function StakePage() {
   const [numTokenStake, setNumTokenStake] = useState(0);
   const [profit, setProfit] = useState(0)
   const [infoStake, setInfoStake] = useState({})
-  const tx8Address = "0xA39a336E89A33D24B5C8a0d594B1f2A78b255825";
+  const tx8Address = "0xa39a336e89a33d24b5c8a0d594b1f2a78b255825";
   const stakeAddress = "0x9c071de4502DB22a76A464d7c0a29fF23c5d0153";
 
 

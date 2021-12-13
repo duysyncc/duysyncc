@@ -70,6 +70,7 @@ function StakePage() {
             <h4>3) Start day:	{infoStake.startday || NaN}</h4>
             <h4>3) Pay day:	{infoStake.payday || NaN}</h4>
           </div>
+          <h4>Token stake</h4>
           <div className="SavingAmount">
             <input type="number" placeholder='Input you number token' value={(numTokenStake / 10 ** 18).toFixed(0)}
               onChange={async (even) => {
@@ -86,6 +87,7 @@ function StakePage() {
 
             >MAX</button>
           </div>
+          <h4>Day stake</h4>
           <div className="SavingAmount">
             <input type="number" placeholder='Input you day to stake token' value={dateStake}
               onChange={async (even) => {

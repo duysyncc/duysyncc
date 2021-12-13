@@ -28,22 +28,26 @@ function FaucetPage() {
     let symbol = await contract.methods.symbol().call()
     return { "symbol": symbol, "decimals": decimals, "balance": balance, "address": addressToken }
   }
+  async function setInfoTokenInit() {
+    let listToken_ = []
+    await Promise.all(listTokenAddress.map(async (address) => {
+      let { symbol, decimals, balance } = await getInfoToken(address)
+      await listToken_.push({
+        "symbol": symbol,
+        "decimals": decimals,
+        "balance": balance,
+        "address": address
+      })
+    }))
+    await setListInfo(listToken_);
+  }
   useEffect(() => {
     async function fetWeb3Init() {
       let web3 = await getWeb3();
       let accounts = await web3.eth.getAccounts();
-      let listToken_ = []
-      await Promise.all(listTokenAddress.map(async (address) => {
-        let { symbol, decimals, balance } = await getInfoToken(address)
-        await listToken_.push({
-          "symbol": symbol,
-          "decimals": decimals,
-          "balance": balance,
-          "address": address
-        })
-      }))
+
       await setAccount(accounts[0]);
-      await setListInfo(listToken_);
+      await setInfoTokenInit();
     }
     fetWeb3Init();
   }, []);
@@ -56,7 +60,8 @@ function FaucetPage() {
             return (<button key={address} className='buttonFaucet' onClick={async () => {
               let contractToken = await erc20(address);
               let data = await contractToken.methods.mint(Web3.utils.toBN(BigInt(1000 * 10 ** decimals).toString())).send({ from: accounts })
-              alert("Add Liquidity Success Check on   https://mumbai.polygonscan.com/tx/" + data.transactionHash)
+              await setInfoTokenInit();
+              alert("Faucet Success, Check on   https://mumbai.polygonscan.com/tx/" + data.transactionHash)
             }}> You balance {(balance / 10 ** decimals).toFixed(0)} -  Faucet 1000 {symbol}</button>)
           })
         }

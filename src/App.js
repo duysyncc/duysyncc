@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import SwapPage from "./pages/Swap"
 import LiquidityPage from "./pages/Liquidity"
 import FaucetPage from './pages/Faucet';
+import StakePage from './pages/Stake';
 function App() {
   const [url, setUrl] = useState("/Swap")
   return (
@@ -20,11 +21,17 @@ function App() {
         <li onClick={() => {
           setUrl("/Faucet")
         }}>Faucet</li>
+
+        <li onClick={() => {
+          setUrl("/Stake")
+        }}>Stake</li>
+
       </ul>
       <div className="main">
         {url == "/Swap" ? <SwapPage /> : null}
         {url == "/Liquidity" ? <LiquidityPage /> : null}
         {url == "/Faucet" ? <FaucetPage /> : null}
+        {url == "/Stake" ? <StakePage /> : null}
       </div>
     </div>
   );

@@ -192,7 +192,8 @@ function LiquidityPage() {
               alert("Approve token  " + tokenB.symbol)
               await contractTokenB.methods.approve(routerAddress, Web3.utils.toBN(BigInt(10 ** 50).toString())).send({ from: accounts })
             }
-
+            
+            alert("Add Liquidity now")
             let contract = await PancakeRouter(routerAddress);
             var data = await contract.methods.addLiquidity(
               tokenA.address,
@@ -204,7 +205,7 @@ function LiquidityPage() {
               accounts,
               Web3.utils.toBN(new Date().getTime() + 20 * 60),
             ).send({ from: accounts })
-            alert("Add Liquidity Success Check on   https://mumbai.polygonscan.com/tx/" + data.transactionHash)
+            alert("Add Liquidity, Success Check on   https://mumbai.polygonscan.com/tx/" + data.transactionHash)
           }}>Add Liquidity</button>
         </div>
       </div>

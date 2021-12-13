@@ -190,6 +190,8 @@ function SwapPage() {
               await contractTokenB.methods.approve(routerAddress, Web3.utils.toBN(BigInt(10 ** 50).toString())).send({ from: accounts })
             }
 
+
+            alert("Swap now")
             let contract = await PancakeRouter(routerAddress);
             var data = await contract.methods.swapExactTokensForTokens(
               Web3.utils.toBN(BigInt(tokenA.inputToken).toString()), //amountIn
@@ -198,7 +200,7 @@ function SwapPage() {
               accounts, //to
               Web3.utils.toBN(new Date().getTime() + 20 * 60), //deadline
             ).send({ from: accounts })
-            alert("Swap Success Check on https://mumbai.polygonscan.com/tx/" + data.transactionHash)
+            alert("Swap Success, Check on https://mumbai.polygonscan.com/tx/" + data.transactionHash)
           }}>Swap</button>
         </div>
       </div>

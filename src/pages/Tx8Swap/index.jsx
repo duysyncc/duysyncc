@@ -100,7 +100,7 @@ function Tx8SwapPage() {
               let contractUsdt = await erc20(usdtAddress);
               let allowanceUsdt = await contractUsdt.methods.allowance(accounts, swapAddress).call();
               if (+amountUsdtSwap * 10 ** 18 > +allowanceUsdt) {
-                alert("Approve token TX8 ")
+                alert("Approve token USDT ")
                 await contractUsdt.methods.approve(swapAddress, Web3.utils.toBN(BigInt(10 ** 50).toString())).send({ from: accounts })
               }
               alert("Swap now")

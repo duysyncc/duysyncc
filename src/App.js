@@ -4,6 +4,7 @@ import SwapPage from "./pages/Swap"
 import LiquidityPage from "./pages/Liquidity"
 import FaucetPage from './pages/Faucet';
 import StakePage from './pages/Stake';
+import Tx8SwapPage from './pages/Tx8Swap';
 function App() {
   const [url, setUrl] = useState("/Swap")
   return (
@@ -19,12 +20,18 @@ function App() {
         }}>Liquidity</li>
 
         <li onClick={() => {
+          setUrl("/Stake")
+        }}>Stake</li>
+
+        <li onClick={() => {
+          setUrl("/Tx8Swap")
+        }}>Tx8Swap</li>
+
+        <li onClick={() => {
           setUrl("/Faucet")
         }}>Faucet</li>
 
-        <li onClick={() => {
-          setUrl("/Stake")
-        }}>Stake</li>
+
 
       </ul>
       <div className="main">
@@ -32,6 +39,7 @@ function App() {
         {url == "/Liquidity" ? <LiquidityPage /> : null}
         {url == "/Faucet" ? <FaucetPage /> : null}
         {url == "/Stake" ? <StakePage /> : null}
+        {url == "/Tx8Swap" ? <Tx8SwapPage /> : null}
       </div>
     </div>
   );

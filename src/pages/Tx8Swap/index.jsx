@@ -62,7 +62,7 @@ function Tx8SwapPage() {
           </h2>
           <h2>Swap TX8 to USDT</h2>
           <div className="SwapPanel">
-            <input type="number" className='inputToken' value={amountTxt8Swap} onChange={(event) => {
+            <input type="number" className='inputToken' value={amountTxt8Swap*2} onChange={(event) => {
               let inputToken = event.target.value;
               setAmountTxt8Swap(inputToken);
             }} />
@@ -91,7 +91,7 @@ function Tx8SwapPage() {
           <hr />
           <h2>Swap USDT to TX8</h2>
           <div className="SwapPanel">
-            <input type="number" className='inputToken' value={amountUsdtSwap} onChange={(event) => {
+            <input type="number" className='inputToken' value={amountUsdtSwap/2} onChange={(event) => {
               let inputToken = event.target.value;
               setAmountUsdtSwap(inputToken);
             }} />

@@ -62,11 +62,11 @@ function Tx8SwapPage() {
           </h2>
           <h2>Swap TX8 to USDT</h2>
           <div className="SwapPanel">
-            <input type="number" className='inputToken' value={amountTxt8Swap*2} onChange={(event) => {
+            <input type="number" className='inputToken' value={amountTxt8Swap} onChange={(event) => {
               let inputToken = event.target.value;
               setAmountTxt8Swap(inputToken);
             }} />
-            <nav className='amount'>2 USDT</nav>
+            <nav className='amount'>{amountTxt8Swap * 2} USDT</nav>
             <button id='ButtonSwap' onClick={async () => {
               let contractTx8 = await erc20(tx8Address);
               let allowanceTx8 = await contractTx8.methods.allowance(accounts, swapAddress).call();
@@ -91,11 +91,11 @@ function Tx8SwapPage() {
           <hr />
           <h2>Swap USDT to TX8</h2>
           <div className="SwapPanel">
-            <input type="number" className='inputToken' value={amountUsdtSwap/2} onChange={(event) => {
+            <input type="number" className='inputToken' value={amountUsdtSwap} onChange={(event) => {
               let inputToken = event.target.value;
               setAmountUsdtSwap(inputToken);
             }} />
-            <nav className='amount'>1 TX8</nav>
+            <nav className='amount'>{amountUsdtSwap / 2} TX8</nav>
             <button id='ButtonSwap' onClick={async () => {
               let contractUsdt = await erc20(usdtAddress);
               let allowanceUsdt = await contractUsdt.methods.allowance(accounts, swapAddress).call();

@@ -93,6 +93,19 @@ function CrawlPage() {
         >
           Clear All
         </button>
+        <button
+          onClick={async () => {
+            let info = [];
+            await listInfo.map(async (item) => {
+              let pairInfo = await getInfoPair(item.addressPair);
+              await info.push(pairInfo);
+              console.log(info);
+            });
+            setListInfo(info);
+          }}
+        >
+          Reload
+        </button>
       </div>
       <div className="ViewPair">
         {listInfo.map((item) => {

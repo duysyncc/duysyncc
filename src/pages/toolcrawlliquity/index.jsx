@@ -101,7 +101,7 @@ function CrawlPage() {
               await info.push(pairInfo);
               console.log(info);
             });
-            setListInfo(info);
+            await setListInfo(info);
           }}
         >
           Reload

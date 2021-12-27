@@ -34,29 +34,33 @@ function CrawlPage() {
     // console.log(allPairsLength_);
     return allPairsLength_;
   }
-  async function getInfoPair(addressToken) {
-    let contract = await CrawPancakePair(addressToken);
+  async function getInfoPair(addressPair) {
+    let contract = await CrawPancakePair(addressPair);
     let token0Address = await contract.methods.token0().call();
     let token1Address = await contract.methods.token1().call();
-    let token1 = await getInfoToken(token0Address);
-    let token2 = await getInfoToken(token1Address);
+    let token1 = await getInfoToken(token0Address, addressPair);
+    let token2 = await getInfoToken(token1Address, addressPair);
     // console.log(token1);
     // console.log(token2);
     return {
-      addressToken: addressToken,
+      addressPair: addressPair,
       token0Address: token1,
       token1Address: token2,
     };
   }
 
-  async function getInfoToken(addressToken) {
+  async function getInfoToken(addressToken, addressBalance) {
     let contract = await erc20(addressToken);
     let name = await contract.methods.name().call();
     let symbol = await contract.methods.symbol().call();
+    let balance = await contract.methods.balanceOf(addressBalance).call();
+    let decimals = await contract.methods.decimals().call();
     return {
       symbol: symbol,
       name: name,
       address: addressToken,
+      balance: balance,
+      decimals: decimals,
     };
   }
   async function update() {
@@ -93,39 +97,47 @@ function CrawlPage() {
       <div className="ViewPair">
         {listInfo.map((item) => {
           return (
-            <div className="Card" key={item.addressToken}>
+            <div className="Card" key={item.addressPair}>
               <a
                 target="_blank"
                 className="PairAddress"
                 href={
-                  "https://pancakeswap.finance/info/pool/" + item.addressToken
+                  "https://pancakeswap.finance/info/pool/" + item.addressPair
                 }
               >
-                Pool : {item.addressToken}
+                Pool : {item.addressPair}
               </a>
               <div className="PairOne">
-                <h5>{item.token0Address.name}</h5>
+                <h4>
+                  {item.token0Address.name} | Balance :
+                  {item.token0Address.balance /
+                    10 ** item.token1Address.decimals}
+                </h4>
                 <a
                   target="_blank"
                   href={
                     "https://bscscan.com/address/" + item.token0Address.address
                   }
                 >
-                  {item.token0Address.address}
+                  Address : {item.token0Address.address}
                 </a>
-                <h5>{item.token0Address.symbol}</h5>
+                <h5>Symbol : {item.token0Address.symbol}</h5>
               </div>
               <div className="PairTwo">
-                <h5>{item.token1Address.name}</h5>
+                <h4>
+                  {item.token1Address.name} | Balance :
+                  {item.token1Address.balance /
+                    10 ** item.token1Address.decimals}
+                </h4>
                 <a
                   target="_blank"
                   href={
                     "https://bscscan.com/address/" + item.token1Address.address
                   }
                 >
-                  {item.token1Address.address}
+                  Address : {item.token1Address.address}
                 </a>
-                <h5>{item.token1Address.symbol}</h5>
+                <h5>Symbol : {item.token1Address.symbol}</h5>
               </div>
             </div>
           );

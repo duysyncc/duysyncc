@@ -102,6 +102,7 @@ function CrawlPage() {
               console.log(info);
             });
             await setListInfo(info);
+            await setAllPairsLengthCount(0);
           }}
         >
           Reload

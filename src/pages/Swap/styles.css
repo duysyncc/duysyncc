@@ -1,0 +1,150 @@
+.MainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 80vw;
+}
+
+.MainCard {
+    width: 70vh;
+    height: 80vh;
+    min-width: 300px;
+    min-height: 500px;
+
+    background: #FFFFFF;
+    border: 1px solid #EFEAF4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.MainCard>hr {
+    border: 0.4px solid #C4C4C4;
+}
+
+.TitleCard {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    color: #301262;
+    line-height: 60px;
+    border-bottom: 1px solid #C4C4C4;
+    width: 100%;
+}
+
+.BoxInput {
+    width: 90%;
+    background: #EFEAF4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.BoxInput-Info, .BoxInput-Value {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+    
+}
+
+.BoxInput-Info>nav {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    /* identical to box height */
+    color: #370A5E;
+}
+
+.BoxInput-Value>input {
+    border: none;
+    outline: none;
+    width: 180px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #370A5E;
+    background: #EFEAF4;
+    
+}
+.IconPlus{
+    color: #370A5E;
+}
+.BoxInput-Value>button {
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #00CAD7;
+
+}
+
+.BoxInput-Value>button:hover {
+    color: #1b9ea5;
+}
+
+.BoxInput-OverView {
+    width: 90%;
+    height: 80px;
+    background: #FFFFFF;
+    border: 1px solid #e8e1e1;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.BoxInput-OverView>ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #370A5E;
+
+}
+
+.Button-Confirm {
+    width: 90%;
+    height: 50px;
+    background: #00CAD7;
+    border-radius: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: none;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.Button-Confirm:hover {
+    background: #04bfcc;
+}

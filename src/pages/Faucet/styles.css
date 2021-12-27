@@ -1,0 +1,18 @@
+.MainContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.buttonFaucet{
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: 900;
+    margin: 10px;
+
+}
+
+

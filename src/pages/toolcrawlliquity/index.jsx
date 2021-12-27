@@ -124,7 +124,7 @@ function CrawlPage() {
                 <h4>
                   {item.token0Address.name} | Balance :
                   {item.token0Address.balance /
-                    10 ** item.token1Address.decimals}
+                    10 ** item.token0Address.decimals}
                 </h4>
                 <a
                   target="_blank"

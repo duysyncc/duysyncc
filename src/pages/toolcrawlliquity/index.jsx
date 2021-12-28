@@ -99,10 +99,9 @@ function CrawlPage() {
             await listInfo.map(async (item) => {
               let pairInfo = await getInfoPair(item.addressPair);
               await info.push(pairInfo);
-              console.log(info);
             });
+            await console.log(info);
             await setListInfo(info);
-            await setAllPairsLengthCount(0);
           }}
         >
           Reload
@@ -125,7 +124,7 @@ function CrawlPage() {
                 <h4>
                   {item.token0Address.name} | Balance :
                   {item.token0Address.balance /
-                    10 ** item.token0Address.decimals}
+                    10 ** item.token1Address.decimals}
                 </h4>
                 <a
                   target="_blank"
